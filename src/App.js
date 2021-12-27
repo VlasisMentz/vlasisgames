@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import NavbarComponent from './components/NavbarComponent/NavbarComponent';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import GamesContainer from './components/GamesContainer/GamesContainer';
 
 function App() {
+  const [data, setData] = useState([]);
+
+  async function getGames() {
+    await axios
+      .get('https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15')
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  useEffect(() => {
+    getGames();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavbarComponent />
+      <GamesContainer data={data} />
+      {/* {data.map((game) => {
+        <h1>hello</h1>;
+        <h2>{game.title}</h2>;
+      })} */}
+    </>
   );
 }
 
