@@ -3,6 +3,7 @@ import NavbarComponent from './components/NavbarComponent/NavbarComponent';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import GamesContainer from './components/GamesContainer/GamesContainer';
+import LogoComponent from './components/LogoComponent/LogoComponent';
 
 function App() {
   const [data, setData] = useState([]);
@@ -25,11 +26,8 @@ function App() {
   return (
     <>
       <NavbarComponent />
+      <LogoComponent />
       <GamesContainer data={data} />
-      {/* {data.map((game) => {
-        <h1>hello</h1>;
-        <h2>{game.title}</h2>;
-      })} */}
     </>
   );
 }

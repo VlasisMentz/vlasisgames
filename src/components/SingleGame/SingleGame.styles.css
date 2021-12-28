@@ -1,6 +1,39 @@
 .game-image {
-  /* width: 100%; */
+  padding: 10px;
+  border-radius: 1.2rem;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 .card-game {
+  background-color: #f77f00 !important;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 20px;
   width: 80%;
+  text-align: center;
+  height: 250px;
+  border-radius: 1.4rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.card-game:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.rating {
+  margin-bottom: 0;
+  /* display: flex; */
+  /* align-items: flex-end; */
+}
+.price {
+  color: green;
+}
+.old-price {
+  color: red;
+  text-decoration: line-through;
+}
+/* .ada {
+  display: flex;
+  align-items: flex-end;
+} */
+.skata {
+  background-color: red;
 }
