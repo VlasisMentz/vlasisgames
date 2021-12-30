@@ -2,7 +2,8 @@
   text-align: center;
   padding-top: 50px;
   background-color: #003049;
+  border-radius: 0.7rem !important;
 }
 .big-container {
-  background-color: #003049;
+  background-color: #dd9403;
 }

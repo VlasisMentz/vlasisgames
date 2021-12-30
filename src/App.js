@@ -10,7 +10,7 @@ function App() {
 
   async function getGames() {
     await axios
-      .get('https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15')
+      .get('https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=50')
       .then((response) => {
         setData(response.data);
       })
