@@ -1,12 +1,10 @@
 import React from 'react';
-import { useState } from 'react';
 import './PaginationComponent.styles.css';
 import { Pagination } from 'react-bootstrap';
 
-const PaginationComponent = ({ totalPages, handlePagination }) => {
-  const [active, setActive] = useState(1);
+const PaginationComponent = ({ handlePagination, active }) => {
   let items = [];
-  for (let number = 1; number <= totalPages; number++) {
+  for (let number = 1; number <= 9; number++) {
     items.push(
       <Pagination.Item
         key={number}
@@ -19,11 +17,7 @@ const PaginationComponent = ({ totalPages, handlePagination }) => {
   }
   return (
     <>
-      <Pagination>
-        <Pagination.Prev />
-        {items}
-        <Pagination.Prev />
-      </Pagination>
+      <Pagination className='d-flex justify-content-center'>{items}</Pagination>
     </>
   );
 };

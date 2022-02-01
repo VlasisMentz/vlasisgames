@@ -1,5 +1,4 @@
 import React from 'react';
-import LogoSteam from './../../assets/steam-logo-black-transparent.png';
 import './LogoComponent.styles.css';
 import { FaSteam } from 'react-icons/fa';
 const LogoComponent = () => {

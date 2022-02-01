@@ -11,7 +11,7 @@ const SingleGame = ({ game }) => {
         <Card className='card-game' onClick={() => handleClick(game)}>
           <Image className='game-image' src={game.thumb} />
           <Card.Body className='d-flex flex-column'>
-            <Card.Title className='title'>{game.title}</Card.Title>
+            <Card.Title className='title'>{game.title.slice(0, 33)}</Card.Title>
             <div className='mt-auto'>
               <h6 className='rating'>{game.steamRatingPercent} %</h6>
               <h6>

@@ -1,6 +1,28 @@
-.pagination {
-  margin: 0;
+.page-link {
+  background-color: red;
+  color: black;
 }
-.button {
-  background-color: red !important;
+ul.pagination li a {
+  color: #dd9403;
+  background-color: #003049;
+  border: 1px solid #dd9403;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.pagination {
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+ul.pagination li a:hover,
+ul.pagination li a.active {
+  color: #003049;
+  background-color: #dd9403;
+  border: 1px solid #003049;
+}
+
+.page-item.active .page-link {
+  background-color: #df780a !important;
+  border: 1px solid #dd9403 !important;
+  border-radius: 5px;
+  margin-right: 5px;
 }

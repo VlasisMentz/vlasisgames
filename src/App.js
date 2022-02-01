@@ -7,9 +7,10 @@ import { Spinner } from 'react-bootstrap';
 
 function App() {
   const [data, setData] = useState([]);
-  const [totalPages, setTotalPages] = useState(0);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
+  const [active, setActive] = useState(1);
 
   async function getGames() {
     setIsLoading(true);
@@ -19,7 +20,7 @@ function App() {
       )
       .then((response) => {
         setData(response.data);
-        setTotalPages(response.headers['x-total-page-count']);
+
         setIsLoading(false);
       })
       .catch((error) => {
@@ -34,7 +35,7 @@ function App() {
 
   const handlePagination = (number) => {
     setCurrentPage(number);
-    console.log(number);
+    setActive(number);
   };
   return (
     <>
@@ -52,9 +53,9 @@ function App() {
           <LogoComponent />
           <GamesContainer
             data={data}
-            totalPages={totalPages}
             handlePagination={handlePagination}
             isLoading={isLoading}
+            active={active}
           />
         </>
       )}

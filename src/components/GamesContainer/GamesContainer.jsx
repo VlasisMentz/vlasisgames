@@ -4,7 +4,7 @@ import SingleGame from '../SingleGame/SingleGame';
 import './GamesContainer.styles.css';
 import PaginationComponent from '../PaginationComponent/PaginationComponent';
 
-const GamesContainer = ({ data, totalPages, handlePagination, isLoading }) => {
+const GamesContainer = ({ data, handlePagination, active }) => {
   const games = data;
   return (
     <>
@@ -17,8 +17,8 @@ const GamesContainer = ({ data, totalPages, handlePagination, isLoading }) => {
           </Row>
         </Container>
         <PaginationComponent
-          totalPages={totalPages}
           handlePagination={handlePagination}
+          active={active}
         />
       </div>
     </>
