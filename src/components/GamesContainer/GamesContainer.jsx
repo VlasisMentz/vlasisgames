@@ -2,9 +2,9 @@ import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import SingleGame from '../SingleGame/SingleGame';
 import './GamesContainer.styles.css';
+import PaginationComponent from '../PaginationComponent/PaginationComponent';
 
-const GamesContainer = ({ data }) => {
-  //   console.log(data);
+const GamesContainer = ({ data, totalPages, handlePagination, isLoading }) => {
   const games = data;
   return (
     <>
@@ -16,6 +16,10 @@ const GamesContainer = ({ data }) => {
             ))}
           </Row>
         </Container>
+        <PaginationComponent
+          totalPages={totalPages}
+          handlePagination={handlePagination}
+        />
       </div>
     </>
   );
